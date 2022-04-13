@@ -1,33 +1,52 @@
-import { withFormik } from "formik";
-import RegisterForm from "../components/RegisterForm";
+import { withFormik } from 'formik';
+import get from 'lodash/get';
+
+import RegisterForm from '../components/RegisterForm';
+
+import { userActions } from '@redux/actions';
+import validateForm from '@utils/validate';
+import { openNotification } from '@utils/helpers';
+
+import store from '@redux/store';
 
 export default withFormik({
+  enableReinitialize: true,
+  mapPropsToValues: () => ({
+    email: '',
+    fullname: '',
+    password: '',
+    password_2: ''
+  }),
   validate: values => {
     let errors = {};
-
-    if (!values.email) {
-      errors.email = "Required";
-    } else if (
-      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
-    ) {
-      errors.email = "Invalid email address";
-    }
-
-    if (!values.password) {
-      errors.password = "Введите пароль";
-    } else if (
-      !/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{3,})/.test(values.password)
-    ) {
-      errors.password = "Слишком лёгкий пароль";
-    }
-
+    validateForm({ isAuth: false, values, errors });
     return errors;
   },
-  handleSubmit: (values, { setSubmitting }) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
-      setSubmitting(false);
-    }, 1000);
+  handleSubmit: (values, { setSubmitting, props }) => {
+    store
+      .dispatch(userActions.fetchUserRegister(values))
+      .then(() => {
+        props.history.push('/signup/verify');
+        setSubmitting(false);
+      })
+      .catch(err => {
+        if (get(err, 'response.data.message.errmsg', '').indexOf('dup') >= 0) {
+          openNotification({
+            title: 'Ошибка',
+            text: 'Аккаунт с такой почтой уже создан.',
+            type: 'error',
+            duration: 5000
+          });
+        } else {
+          openNotification({
+            title: 'Ошибка',
+            text: 'Возникла серверная ошибка при регистрации. Повторите позже.',
+            type: 'error',
+            duration: 5000
+          });
+        }
+        setSubmitting(false);
+      });
   },
-  displayName: "RegisterForm"
+  displayName: 'RegisterForm'
 })(RegisterForm);

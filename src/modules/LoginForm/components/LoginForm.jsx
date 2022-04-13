@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 import { Button, Block } from "@components";
 
+
+
 class LoginForm extends Component {
   render() {
     return (
@@ -38,7 +40,7 @@ class LoginForm extends Component {
                 Войти в аккаунт
               </Button>
             </Form.Item>
-            <Link className="auth__register-link" to="/register">
+            <Link className="auth__register-link" to="/signup">
               Зарегистрироваться
             </Link>
           </Form>

@@ -10,9 +10,7 @@ const Auth = () => {
   return (
     <section className="auth">
       <div className="auth__content">
-
       <Outlet />
-       
       </div>
     </section>
   );

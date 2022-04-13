@@ -1,7 +1,7 @@
 import { Auth, Home } from "@pages";
 
 import { Route, Routes } from "react-router-dom";
-
+import CheckEmailInfo from './pages/Auth/components/CheckEmailInfo'
 import { LoginForm, RegisterForm } from "@modules";
 
 function App() {
@@ -10,12 +10,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Auth />}>
           <Route index element={<LoginForm />} />
-          <Route path="/register" element={<RegisterForm />} />
+          <Route path="/signup" element={<RegisterForm />} />
+          <Route path="/signup/verify" element={<CheckEmailInfo/>} />
           <Route path="/home" element={<Home />} />
           <Route path="*" element={<h2>404</h2>} />
         </Route>
       </Routes>
-      <Auth />
     </div>
   );
 }
