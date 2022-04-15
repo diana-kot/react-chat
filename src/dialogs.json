@@ -1,0 +1,66 @@
+[
+  {
+    "_id": "f455hj4554h5j554545",
+    "text": "Свидетельство. Сим удостоверяю, что пасынок мой, Павел Александров Исаев, шестнадцати лет, поручен мною для приготовления его в гимназию п для жительства Михаилу Васильевичу",
+    "isReaded": false,
+    "createdAt": "Wed Apr 13 2021 19:04:59",
+    "user": {
+      "_id": "f455hj4554h5j554545",
+      "fullname": "Федор Достоевский",
+      "avatar": null
+    }
+  },
+  {
+    "_id": "hf455hj4554h5j554545",
+    "text": "Привет",
+    "isReaded": false,
+    "createdAt": "Wed Apr 18 2021 19:04:59",
+    "user": {
+      "_id": "hf455hj4554h5j554545",
+      "fullname": "Ваня",
+      "avatar": null
+    }
+  },
+  {
+    "_id": "hf455hj454h5j554545",
+    "text": "Привет",
+    "isReaded": false,
+    "createdAt": "Wed Apr 18 2021 19:04:59",
+    "user": { "_id": "f5hj4554h5j54545", "fullname": "Юля", "avatar": null }
+  },
+  {
+    "_id": "8854h5j554545",
+    "text": "Привет",
+    "isReaded": false,
+    "createdAt": "Wed Apr 18 2021 19:04:59",
+    "user": { "_id": "588hj4554h545", "fullname": "Сережа", "avatar": null }
+  },
+  {
+    "_id": "766454554545",
+    "text": "Привет",
+    "isReaded": false,
+    "createdAt": "Wed Apr 18 2021 19:04:59",
+    "user": { "_id": "754554h545", "fullname": "Диана", "avatar": null }
+  },
+  {
+    "_id": "234454554545",
+    "text": "Привет",
+    "isReaded": false,
+    "createdAt": "Wed Apr 18 2021 19:04:59",
+    "user": { "_id": "8444554h545", "fullname": "Наташа", "avatar": null }
+  },
+  {
+    "_id": "093454554545",
+    "text": "Привет",
+    "isReaded": false,
+    "createdAt": "Wed Apr 18 2021 19:04:59",
+    "user": { "_id": "1234554h545", "fullname": "Павел", "avatar": null }
+  },
+  {
+    "_id": "764454554545",
+    "text": "Привет",
+    "isReaded": false,
+    "createdAt": "Wed Apr 18 2021 19:04:59",
+    "user": { "_id": "8744554h545", "fullname": "Вероника", "avatar": null }
+  }
+]

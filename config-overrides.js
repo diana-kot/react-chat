@@ -10,6 +10,8 @@ module.exports = function override(config, env) {
         '@modules': 'src/modules',
         '@assets': 'src/assets',
         '@redux': 'src/redux',
+        '@containers': 'src/containers',
+        
     })(config);
 
     return config;

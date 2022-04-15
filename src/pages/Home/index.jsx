@@ -1,88 +1,50 @@
 import React from "react";
-import { Message, DialogItem } from "@components";
+import { Messages,  Status } from "@components";
+import { Dialogs } from "@containers";
+import {
+  TeamOutlined,
+  FormOutlined,
+  EllipsisOutlined,
+  SmileOutlined,
+} from "@ant-design/icons";
+
+import dialogs from '../../dialogs.json'
+
 
 import "./Home.scss";
+import { matchPath } from "react-router-dom";
+import ChatInput from "../../components/ChatInput";
 
 const Home = () => (
   <section className="home">
-    <div className="dialogs">
-      <DialogItem
-        user={{
-          fullname: "Федор Достоевский",
-          isOnline: false
-        }}
-        unreaded={999}
-      />
-      <DialogItem
-        user={{
-          fullname: "Федор Достоевский",
-          isOnline: true
-        }}
-        unreaded={0}
-      />
-      <DialogItem
-        user={{
-          fullname: "Федор Достоевский",
-          isOnline: false
-        }}
-        unreaded={0}
-      />
+    <div className="chat">
+      <div className="chat__sidebar">
+        <div className="chat__sidebar-header">
+          <div>
+            <TeamOutlined />
+            <span>Список диалогов</span>
+          </div>
+          <FormOutlined />
+        </div>
+      
+        <div className="chat__sidebar-dialogs">
+       
+          <Dialogs
+            userId={0}
+            items={dialogs}
+          />
+        </div>
+      </div>
+      <div className="chat__dialog">
+        <Status online={"онлайн"} fullname={"Сережа"} />
+        <div className="chat__dialog-messages">
+         <Messages/>
+        </div>
+        <div className="chat__dialog-input">
+          <ChatInput />
+        </div>
+      </div>
     </div>
-
-    {/* <Dialogs
-      items={[
-        {
-          user: {
-            fullname: "Федор Достоевский",
-            avatar: null,
-          },
-          message: {
-            text: "Свидетельство. Сим удостоверяю, что пасынок мой, Павел Александров Исаев, шестнадцати лет, поручен мною для приготовления его в гимназию п для жительства Михаилу Васильевичу",
-            isReaded: false,
-            created_at: new Date(),
-          },
-        },
-      ]}
-    /> */}
-    {/* <Message
-      avatar="https://pp.userapi.com/c846017/v846017841/18957c/1iVH9FKXi4E.jpg?ava=1"
-      text="Мы тут недавно войска Ариовиста разбили, чуваки хотели закрепиться на галльских землях, лол 🌝"
-      date="Sun Apr 21 2022 21:55:29"
-      attachments={[
-        {
-          filename: "image.jpg",
-          url: "https://source.unsplash.com/100x100/?random=1&nature,water",
-        },
-        {
-          filename: "image.jpg",
-          url: "https://source.unsplash.com/100x100/?random=1&nature,water",
-        },
-        {
-          filename: "image.jpg",
-          url: "https://source.unsplash.com/100x100/?random=1&nature,water",
-        },
-      ]}
-    />
-    <Message
-      avatar="https://sun1-89.userapi.com/c850424/v850424867/f6869/B-F_i2BilOA.jpg?ava=1"
-      text="Hello, World!"
-      date="Sun Apr 21 2019 21:59:29"
-      isMe={true}
-      isReaded={false}
-    />
-    <Message
-      avatar="https://pp.userapi.com/c846017/v846017841/18957c/1iVH9FKXi4E.jpg?ava=1"
-      attachments={[
-        {
-          filename: "image.jpg",
-          url: "https://source.unsplash.com/100x100/?random=1&nature,water",
-        },
-      ]}
-    />
-    <Message
-      avatar="https://pp.userapi.com/c846017/v846017841/18957c/1iVH9FKXi4E.jpg?ava=1"
-      isTyping
-    /> */}
   </section>
 );
 

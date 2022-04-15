@@ -12,7 +12,7 @@ const getCorrectIndex = number => {
 
 export default hash => {
   const [r, g, b] = hash
-    .substr(0, 3)
+    .substring(0, 3)
     .split("")
     .map(char => getCorrectIndex(char.charCodeAt(0)));
 
@@ -24,6 +24,6 @@ export default hash => {
     colorLighten: tinycolor({ r, g, b })
       .lighten(30)
       .saturate(30)
-      .toHexString()
+      .toHexString() 
   };
 };
