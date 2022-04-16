@@ -8,12 +8,6 @@
     max-width: 440px;
     margin-bottom: 20px;
     position: relative;
-
-    &:hover {
-      #{$self}__icon-actions {
-        display: block;
-      }
-    }
   }
 
   &__avatar {
@@ -51,63 +45,24 @@
   &__attachments {
     display: flex;
     margin-bottom: 5px;
-    order: 1;
     &-item {
-      $item: &;
       margin-right: 5px;
       cursor: pointer;
-      position: relative;
-
       img {
         width: 45px;
         height: 45px;
         border-radius: 8px;
       }
-
-      &:hover {
-        #{$item}-overlay {
-          opacity: 1;
-        }
-      }
-
-      .anticon-eye {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-      }
-
-      &-overlay {
-        opacity: 0;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.3);
-        transition: opacity 0.15s ease-in-out;
-        border-radius: 8px;
-      }
     }
   }
 
-  &__icon {
-    &-readed {
-      position: absolute;
-      bottom: 22px;
-      left: -25px;
+  &__icon-readed {
+    position: absolute;
+    bottom: 22px;
+    left: -25px;
 
-      &--no {
-        left: -20px;
-      }
-    }
-    &-actions {
-      display: none;
-      transform: rotate(90deg);
-      position: absolute;
-      left: -31px;
-      top: -5px;
+    &--no {
+      left: -20px;
     }
   }
 
@@ -121,12 +76,6 @@
       overflow: hidden;
     }
     #{$self}__audio {
-      padding: 15px;
-      background-color: #3674ff;
-      border-radius: 12px 12px 0px 12px;
-      width: 250px;
-      overflow: hidden;
-      position: relative;
       &-info {
         display: flex;
         align-items: center;
@@ -135,7 +84,6 @@
       }
       &-btn {
         button {
-          display: flex;
           cursor: pointer;
           border: 0;
           width: 28px;
@@ -144,8 +92,6 @@
           background: #0f3997;
           img {
             height: 13px;
-            position: relative;
-            left: 1px;
           }
         }
       }
@@ -170,11 +116,6 @@
     display: flex;
     flex-direction: row-reverse;
 
-    .avatar {
-      margin-left: 13px;
-      margin-right: 0;
-    }
-
     #{$self}__content {
       margin-bottom: 15px;
       flex-direction: row-reverse;
@@ -188,8 +129,6 @@
     }
 
     #{$self}__info {
-      display: flex;
-      align-items: center;
       text-align: right;
     }
 
@@ -198,7 +137,6 @@
       border: 1px solid #ececec;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.0220444);
       border-radius: 12px 12px 0px 12px;
-      order: 2;
       #{$self}__text {
         color: $black;
       }
@@ -259,15 +197,4 @@
     opacity: 1;
     transform: translateY(-1px);
   }
-}
-
-.message__avatar {
-  width: 80px;
-  height: 70px;
-  border-radius: 50%;
-  padding: 20px;
-}
-
-.message__info {
-  flex-direction: column-reverse;
 }

@@ -1,7 +1,7 @@
-// import { axios } from "core";
+import { axios } from "@core";
 
-// export default {
-//   getAllByDialogId: id => axios.get("/messages?dialog=" + id),
+export default {
+  getAllByDialogId: id => axios.get("/messages?dialog=" + id),
 //   removeById: id => axios.delete("/messages?id=" + id),
 //   send: (text, dialogId, attachments) =>
 //     axios.post("/messages", {
@@ -9,4 +9,4 @@
 //       dialog_id: dialogId,
 //       attachments
 //     })
-// };
+};

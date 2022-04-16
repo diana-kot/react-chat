@@ -96,71 +96,32 @@ const Message = ({
   user,
   text,
   date,
-  isMe,
   audio,
-  readed,
+  isMe,
   isReaded,
   attachments,
-  isTyping,
-  onRemoveMessage,
-  setPreviewImage,
+  isTyping
 }) => {
-  // const renderAttachment = (item) => {
-  //   if (item.ext !== "webm") {
-  //     return (
-  //       <div
-  //         key={item._id}
-  //         onClick={() => setPreviewImage(item.url)}
-  //         className="message__attachments-item"
-  //       >
-  //         <div className="message__attachments-item-overlay">
-  //           {/* <Icon type="eye" style={{ color: 'white', fontSize: 18 }} /> */}
-  //         </div>
-
-  //         <img src={item.url} alt={item.filename} />
-  //       </div>
-  //     );
-  //   } else {
-  //     return <MessageAudio key={item._id} audioSrc={item.url} />;
-  //   }
-  // };
-
   return (
     <div
       className={classNames("message", {
         "message--isme": isMe,
         "message--is-typing": isTyping,
         "message--is-audio": audio,
-        "message--image": attachments && attachments.length === 1,
+        "message--image": attachments && attachments.length === 1
       })}
     >
       <div className="message__content">
         <IconReaded isMe={isMe} isReaded={isReaded} />
-        <Popover
-          content={
-            <div>
-              <Button onClick={onRemoveMessage}>Удалить сообщение</Button>
-            </div>
-          }
-          trigger="click"
-        >
-          <div className="message__icon-actions">
-            <Button type="link" shape="circle">
-              <EllipsisOutlined />
-            </Button>
-          </div>
-        </Popover>
         <div className="message__avatar">
-          <img src={avatar} alt={`Avatar ${user.fullname}`} />
+          <Avatar user={user} />
         </div>
         <div className="message__info">
-          {(text || isTyping) && (
+          {(audio || text || isTyping) && (
             <div className="message__bubble">
               {text && (
                 <p className="message__text">
-                  {reactStringReplace(text, /:(.+?):/g, (match, i) => (
-                    <Emoji key={i} emoji={match} set="apple" size={16} />
-                  ))}
+                  <Emoji emoji=":santa::skin-tone-3:" set="apple" size={16} />
                 </p>
               )}
               {isTyping && (
@@ -196,7 +157,7 @@ const Message = ({
 };
 
 Message.defaultProps = {
-  user: {},
+  user: {}
 };
 
 Message.propTypes = {
@@ -208,7 +169,7 @@ Message.propTypes = {
   isMe: PropTypes.bool,
   isReaded: PropTypes.bool,
   isTyping: PropTypes.bool,
-  audio: PropTypes.string,
+  audio: PropTypes.string
 };
 
 export default Message;

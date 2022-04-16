@@ -1,6 +1,6 @@
 import React from "react";
-import { Messages,  Status } from "@components";
-import { Dialogs } from "@containers";
+import { ChatInput,  Status } from "@components";
+import { Dialogs, Messages } from "@containers";
 import {
   TeamOutlined,
   FormOutlined,
@@ -8,12 +8,9 @@ import {
   SmileOutlined,
 } from "@ant-design/icons";
 
-import dialogs from '../../dialogs.json'
-
-
 import "./Home.scss";
 import { matchPath } from "react-router-dom";
-import ChatInput from "../../components/ChatInput";
+
 
 const Home = () => (
   <section className="home">
@@ -31,12 +28,12 @@ const Home = () => (
        
           <Dialogs
             userId={0}
-            items={dialogs}
+            
           />
         </div>
       </div>
       <div className="chat__dialog">
-        <Status online={"онлайн"} fullname={"Сережа"} />
+        <Status online fullname={"Сережа"} />
         <div className="chat__dialog-messages">
          <Messages/>
         </div>
