@@ -1,6 +1,6 @@
 const initialState = {
   items: [],
-  // isLoading: false,
+  isLoading: false,
 };
 
 export default (state = initialState, { type, payload }) => {
@@ -14,7 +14,7 @@ export default (state = initialState, { type, payload }) => {
       return {
         ...state,
         items: payload,
-        // isLoading: false,
+        isLoading: false,
       };
     // case 'DIALOGS:LAST_MESSAGE_READED_STATUS':
     //   return {
@@ -31,11 +31,11 @@ export default (state = initialState, { type, payload }) => {
     //     ...state,
     //     items: state.items.filter(message => message._id !== payload),
     //   };
-    // case 'MESSAGES:SET_IS_LOADING':
-    //   return {
-    //     ...state,
-    //     isLoading: payload,
-    //   };
+    case 'MESSAGES:SET_IS_LOADING':
+      return {
+        ...state,
+        isLoading: payload,
+      };
     default:
       return state;
   }

@@ -1,4 +1,5 @@
 .chat-input {
+  display: flex;
   margin: 20px;
   position: relative;
 
@@ -94,6 +95,7 @@
   input {
     padding: 6px 11px 8px;
     font-size: 14px;
+    
     &:focus {
       box-shadow: none;
     }
@@ -110,4 +112,23 @@
   100% {
     transform: scale(1);
   }
+}
+
+.camera {
+  img {
+    cursor: pointer;
+    input {
+      cursor: pointer;
+    }
+    &:hover {
+      button {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.chat-input-with {
+  width: 100%;
 }

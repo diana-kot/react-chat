@@ -9,15 +9,15 @@ const Dialogs = ({
   currentDialogId,
   setCurrentDialogId,
   items,
-  userId,
+  userId
 }) => {
   const [inputValue, setValue] = useState("");
   const [filtred, setFiltredItems] = useState(Array.from(items));
 
-  const onChangeInput = (value) => {
+  const onChangeInput = value => {
     setFiltredItems(
       items.filter(
-        (dialog) =>
+        dialog =>
           dialog.user.fullname.toLowerCase().indexOf(value.toLowerCase()) >= 0
       )
     );
@@ -45,5 +45,6 @@ const Dialogs = ({
 };
 
 export default connect(
-  ({ dialogs }) => dialogs, 
-   dialogsActions)(Dialogs);
+  ({ dialogs }) => dialogs,
+  dialogsActions
+)(Dialogs);

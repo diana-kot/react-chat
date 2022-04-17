@@ -1,16 +1,16 @@
 import React from "react";
-import { ChatInput,  Status } from "@components";
-import { Dialogs, Messages } from "@containers";
+import { Icon, Button } from "antd";
 import {
   TeamOutlined,
   FormOutlined,
   EllipsisOutlined,
-  SmileOutlined,
 } from "@ant-design/icons";
+
+import { ChatInput, Status } from "@components";
+import { Dialogs, Messages } from "@containers";
 
 import "./Home.scss";
 import { matchPath } from "react-router-dom";
-
 
 const Home = () => (
   <section className="home">
@@ -23,19 +23,29 @@ const Home = () => (
           </div>
           <FormOutlined />
         </div>
-      
+
         <div className="chat__sidebar-dialogs">
-       
-          <Dialogs
-            userId={0}
-            
-          />
+          <Dialogs userId={0} />
         </div>
       </div>
+
       <div className="chat__dialog">
-        <Status online fullname={"Сережа"} />
+        <div className="chat__dialog-header">
+          <div />
+          <div className="chat__dialog-header-center">
+            <b className="chat__dialog-header-username">Гай Юлий Цезарь</b>
+            <div className="chat__dialog-header-status">
+              <Status online />
+            </div>
+          </div>
+          <div>
+            <Button type="link" shape="circle">
+              <EllipsisOutlined style={{ fontSize: "22px" }} />
+            </Button>
+          </div>
+        </div>
         <div className="chat__dialog-messages">
-         <Messages/>
+          <Messages />
         </div>
         <div className="chat__dialog-input">
           <ChatInput />

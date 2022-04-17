@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 
 import { IconReaded, Avatar } from "..";
 
-const getMessageTime = (createdAt) => {
-  if (isToday(createdAt)) {
-    return format(createdAt, "HH:mm");
+const getMessageTime = created_at => {
+  if (isToday(created_at)) {
+    return format(created_at, "HH:mm");
   } else {
-    return format(createdAt, "DD.MM.YYYY");
+    return format(created_at, "DD.MM.YYYY");
   }
 };
 

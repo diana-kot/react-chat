@@ -60,11 +60,9 @@
 
     &-header {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       padding: 12px;
-      padding-top: 9px;
-      padding-bottom: 0;
       border-bottom: 1px solid #f7f7f7;
 
       .ant-btn-circle {
@@ -77,30 +75,15 @@
         text-align: center;
       }
 
-      &-action {
-        position: absolute;
-        right: 20px;
-        top: 12px;
-        transform: rotate(90deg);
-      }
-
       &-username {
         display: block;
         margin-bottom: 5px;
         font-weight: 500;
       }
     }
+
+    &-messages {
+      height: calc(100% - 138px);
+    }
   }
 }
-
-
-// .chat__dialog {
-//   height: calc(100%-86px);
-//   overflow: auto;
-// }
-
-// .chat__dialog-input {
-//   position: absolute;
-//   top: 100vh;
-//   width: 100%;
-// }
